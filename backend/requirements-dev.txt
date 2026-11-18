@@ -1,0 +1,7 @@
+# Development and test dependencies.
+-r requirements.txt
+pytest==9.2.0
+pytest-asyncio==1.5.0
+httpx==0.28.1
+# Downloads and runs a throwaway MongoDB for tests (no Atlas needed).
+pymongo-inmemory==0.5.0

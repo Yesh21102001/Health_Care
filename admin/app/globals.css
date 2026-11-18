@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/*
+ * HealthAI design tokens.
+ * Brand: calm medical teal. Ink: slate neutrals. Danger: reserved for
+ * emergency / urgent messaging only, so it keeps its meaning.
+ * Text-on-brand uses brand-700+ to keep WCAG AA contrast (>= 4.5:1 on white).
+ */
+@theme {
+  --color-brand-50: #effcfb;
+  --color-brand-100: #d6f5f2;
+  --color-brand-200: #aeeae5;
+  --color-brand-300: #7ad8d2;
+  --color-brand-400: #44beb9;
+  --color-brand-500: #22a29f;
+  --color-brand-600: #168482;
+  --color-brand-700: #156a69;
+  --color-brand-800: #155555;
+  --color-brand-900: #144747;
+
+  --color-surface: #ffffff;
+  --color-canvas: #f7f9fb;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px rgb(15 23 42 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.04), 0 12px 32px rgb(15 23 42 / 0.10);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keeps anchor targets clear of the sticky navbar. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-slate-900);
+  font-family: var(--font-sans);
+}
+
+/* Visible, consistent keyboard focus everywhere. */
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

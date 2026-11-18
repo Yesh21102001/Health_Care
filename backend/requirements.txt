@@ -1,0 +1,11 @@
+# Runtime dependencies (pinned for reproducible installs).
+fastapi==0.163.2
+uvicorn[standard]==0.54.0
+pymongo==4.20.0
+pydantic==2.14.3
+pydantic-settings==2.16.3
+email-validator==2.4.0
+anthropic==2.10.0
+# Pinned below 0.19: Windows Smart App Control blocked the 0.19.0 binary on the
+# dev machine ("An Application Control policy has blocked this file").
+jiter==0.18.0
